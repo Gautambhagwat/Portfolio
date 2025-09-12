@@ -78,7 +78,7 @@ const About = () => {
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16 animate-enter">
           <h1 className="text-4xl font-bold tracking-tight mb-6">About Me</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             I'm a passionate software engineer with a diverse technical background spanning multiple 
@@ -89,7 +89,7 @@ const About = () => {
         </div>
 
         {/* My Journey Section */}
-        <Card className="p-8 mb-12 shadow-card animate-slide-in-left">
+        <Card className="p-8 mb-12 shadow-card animate-enter">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-6">My Journey</h2>
@@ -104,7 +104,7 @@ const About = () => {
               </p>
             </div>
             <div className="flex justify-center">
-              <div className="relative animate-bounce-in">
+              <div className="relative">
                 <div className="w-48 h-48 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center animate-pulse-slow">
                   <Code className="h-24 w-24 text-white" />
                 </div>
@@ -120,16 +120,16 @@ const About = () => {
         </Card>
 
         {/* Skills Section */}
-        <div className="mb-12 animate-slide-in-right">
+        <div className="mb-12 animate-enter">
           <h2 className="text-3xl font-bold text-center mb-12">Skills & Technologies</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skillCategories.map((category, index) => (
               <Card 
                 key={category.title} 
                 className={`p-6 shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:scale-105 cursor-pointer group ${
-                  visibleCards.includes(index) ? 'animate-bounce-in' : 'opacity-0'
+                  visibleCards.includes(index) ? 'animate-enter' : 'opacity-0'
                 }`}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div className={`p-3 bg-gradient-to-br ${category.color} rounded-lg text-white shadow-lg group-hover:scale-110 transition-transform`}>
@@ -142,9 +142,9 @@ const About = () => {
                     <div 
                       key={skill.name}
                       className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-all duration-300 transform hover:translate-x-2"
-                      style={{ animationDelay: `${(index * 0.2) + (skillIndex * 0.1)}s` }}
+                      style={{ animationDelay: `${(index * 0.1) + (skillIndex * 0.05)}s` }}
                     >
-                      <span className="text-2xl animate-pulse">{skill.icon}</span>
+                      <span className="text-2xl">{skill.icon}</span>
                       <span className="text-sm font-medium">{skill.name}</span>
                     </div>
                   ))}
@@ -154,36 +154,15 @@ const About = () => {
           </div>
         </div>
 
-        {/* Interactive Features */}
-        <Card className="p-8 shadow-card mb-8 animate-fade-in hover:shadow-card-hover transition-all">
-          <h2 className="text-3xl font-bold text-center mb-8">Interactive Features</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-4 rounded-lg border-2 border-dashed border-primary/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer group">
-              <MousePointer className="h-12 w-12 mx-auto mb-4 text-primary group-hover:animate-bounce" />
-              <h4 className="font-semibold mb-2">Hover Effects</h4>
-              <p className="text-sm text-muted-foreground">Interactive hover animations throughout</p>
-            </div>
-            <div className="text-center p-4 rounded-lg border-2 border-dashed border-primary/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer group">
-              <Zap className="h-12 w-12 mx-auto mb-4 text-primary group-hover:animate-pulse" />
-              <h4 className="font-semibold mb-2">Smooth Animations</h4>
-              <p className="text-sm text-muted-foreground">CSS animations and transitions</p>
-            </div>
-            <div className="text-center p-4 rounded-lg border-2 border-dashed border-primary/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer group">
-              <Code className="h-12 w-12 mx-auto mb-4 text-primary group-hover:animate-spin" />
-              <h4 className="font-semibold mb-2">React Features</h4>
-              <p className="text-sm text-muted-foreground">State management and effects</p>
-            </div>
-          </div>
-        </Card>
 
         {/* Personal Info */}
-        <Card className="p-8 shadow-card animate-fade-in">
+        <Card className="p-8 shadow-card animate-enter">
           <h2 className="text-3xl font-bold text-center mb-8">Get to Know Me</h2>
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="hover:transform hover:scale-105 transition-transform p-4 rounded-lg hover:bg-muted/30">
-              <h3 className="font-semibold text-lg mb-2">Education Focus</h3>
+              <h3 className="font-semibold text-lg mb-2">Education</h3>
               <p className="text-muted-foreground">
-                Currently pursuing B.E. in Information Technology with a strong academic record (CGPA: 8.34)
+                Completed my B.E. in Information Technology with a strong academic record (CGPA: 8.34) in 2025
               </p>
             </div>
             <div className="hover:transform hover:scale-105 transition-transform p-4 rounded-lg hover:bg-muted/30">

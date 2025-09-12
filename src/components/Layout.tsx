@@ -12,6 +12,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     root.classList.toggle("dark", isDark);
   }, [isDark]);
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname]);
+
   const navigation = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
@@ -20,8 +25,22 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { name: "Contact", path: "/contact" },
   ];
 
-  const handleResumeDownload = () => {
-    // This would typically download a PDF resume
+  const handleResumeDownload = async () => {
+    try {
+      const resumePath = "/resume.pdf"; // place resume.pdf in public/
+      const response = await fetch(resumePath, { method: "HEAD" });
+      if (response.ok) {
+        const link = document.createElement("a");
+        link.href = resumePath;
+        link.download = "Gautam_Bhagwat_Resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        return;
+      }
+    } catch (_) {
+      // fall back below
+    }
     window.open("mailto:gautambhagwat007@gmail.com?subject=Resume Request", "_blank");
   };
 

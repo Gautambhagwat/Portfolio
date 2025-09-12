@@ -103,3 +103,10 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .animate-enter {
+    @apply animate-in fade-in-50 slide-in-from-bottom-2 ease-out;
+    animation-duration: 2s;
+  }
+}

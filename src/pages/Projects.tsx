@@ -17,8 +17,8 @@ const Projects = () => {
       category: "Web Development",
       status: "completed",
       technologies: ["React", "TypeScript", "Tailwind CSS"],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/Gautambhagwat/gautam-dev-folio",
+      demo: "https://your-portfolio-demo.example.com"
     },
     {
       title: "E-Commerce Backend",
@@ -26,8 +26,8 @@ const Projects = () => {
       category: "Java Full Stack",
       status: "in-progress",
       technologies: ["Java", "Spring Boot", "PostgreSQL", "REST APIs"],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/Gautambhagwat/placeholder-ecommerce",
+      demo: ""
     },
     {
       title: "Sales Data Analysis",
@@ -35,8 +35,8 @@ const Projects = () => {
       category: "Data Science",
       status: "planned",
       technologies: ["Python", "Pandas", "Matplotlib", "Jupyter"],
-      github: "#",
-      demo: "#"
+      github: "",
+      demo: ""
     },
     {
       title: "Business Dashboard",
@@ -44,8 +44,8 @@ const Projects = () => {
       category: "Data Analytics",
       status: "planned",
       technologies: ["Tableau", "SQL", "Power BI"],
-      github: "#",
-      demo: "#"
+      github: "",
+      demo: ""
     }
   ];
 
@@ -71,20 +71,32 @@ const Projects = () => {
     }
   };
 
+  const openLink = (url?: string) => {
+    if (!url) return;
+    const trimmed = url.trim();
+    if (!trimmed) return;
+    window.open(trimmed, "_blank", "noreferrer");
+  };
+
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-tight mb-6">Projects</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore my work across different IT domains. Each project represents my journey in building 
-            diverse technical solutions and expanding my expertise.
+    <div className="min-h-screen py-0 px-4 sm:px-6 lg:px-8">
+      {/* Hero Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full animate-pulse-slow"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full animate-bounce-in"></div>
+        </div>
+        <div className="mx-auto max-w-6xl text-center relative z-10 animate-enter">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">Projects</h1>
+          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Explore my work across multiple domains. Filters help you find what you need.
           </p>
         </div>
+      </section>
 
+      <div className="mx-auto max-w-6xl">
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12 animate-enter">
           {filters.map((filter) => (
             <Button
               key={filter}
@@ -100,7 +112,7 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {filteredProjects.map((project, index) => (
-            <Card key={index} className="p-6 shadow-card hover:shadow-card-hover transition-all group">
+            <Card key={index} className="p-6 shadow-card hover:shadow-card-hover transition-all group animate-enter">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
@@ -111,11 +123,9 @@ const Projects = () => {
                   </Badge>
                 </div>
               </div>
-              
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 {project.description}
               </p>
-              
               {/* Technologies */}
               <div className="mb-6">
                 <div className="flex flex-wrap gap-2">
@@ -126,14 +136,14 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-              
               {/* Action Buttons */}
               <div className="flex gap-4">
                 <Button 
                   variant="outline" 
                   size="sm" 
                   className="flex items-center gap-2"
-                  disabled={project.status === "planned"}
+                  disabled={!project.github || project.status === "planned"}
+                  onClick={() => openLink(project.github)}
                 >
                   <Github className="h-4 w-4" />
                   Code
@@ -142,13 +152,13 @@ const Projects = () => {
                   variant="outline" 
                   size="sm" 
                   className="flex items-center gap-2"
-                  disabled={project.status === "planned"}
+                  disabled={!project.demo || project.status === "planned"}
+                  onClick={() => openLink(project.demo)}
                 >
                   <ExternalLink className="h-4 w-4" />
                   Demo
                 </Button>
               </div>
-              
               {project.status === "planned" && (
                 <p className="text-xs text-muted-foreground mt-3">
                   This project is currently in planning phase. Stay tuned for updates!
@@ -159,7 +169,7 @@ const Projects = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center animate-enter">
           <Card className="p-8 shadow-card">
             <h2 className="text-2xl font-bold mb-4">Interested in Collaborating?</h2>
             <p className="text-muted-foreground mb-6">
