@@ -1,6 +1,36 @@
-# Gautam Bhagwat - Portfolio
+# 🌐Portfolio
 
-A personal portfolio built with Vite, React, TypeScript, Tailwind CSS, and shadcn-ui.
+A personal portfolio website to showcase projects, skills, and contact information.
+
+---
+
+## 🚀 Live Demo
+
+[Visit the live site](https://portfolio-sigma-five-46.vercel.app)  
+*(Contact page: [here](https://portfolio-sigma-five-46.vercel.app/contact))*
+
+---
+
+## 🧰 Built With
+
+- HTML5 & CSS3  
+- JavaScript / TypeScript  
+- [React.js](https://reactjs.org) (or your frontend framework)  
+- Tailwind CSS / Styled Components / SASS (whichever you used)  
+- Deployed via [Vercel](https://vercel.com)
+
+---
+
+## 🎯 Features
+
+- Responsive layout for desktop, tablet, and mobile  
+- Clean UI/UX design  
+- Contact form to allow visitors to get in touch  
+- Projects gallery / portfolio section  
+- Smooth animations / transitions  
+- Dark mode (if implemented)
+
+---
 
 ## Getting Started
 
@@ -50,51 +80,5 @@ Typical steps (Netlify/Vercel):
 ## License
 MIT
 
-# 🌐 Sigma Five Portfolio
 
-A personal portfolio website to showcase projects, skills, and contact information.
-
----
-
-## 🚀 Live Demo
-
-[Visit the live site](https://portfolio-sigma-five-46.vercel.app)  
-*(Contact page: [here](https://portfolio-sigma-five-46.vercel.app/contact))*
-
----
-
-## 🧰 Built With
-
-- HTML5 & CSS3  
-- JavaScript / TypeScript  
-- [React.js](https://reactjs.org) (or your frontend framework)  
-- Tailwind CSS / Styled Components / SASS (whichever you used)  
-- Deployed via [Vercel](https://vercel.com)
-
----
-
-## 🎯 Features
-
-- Responsive layout for desktop, tablet, and mobile  
-- Clean UI/UX design  
-- Contact form to allow visitors to get in touch  
-- Projects gallery / portfolio section  
-- Smooth animations / transitions  
-- Dark mode (if implemented)
-
----
-
-## 📦 Installation & Local Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/portfolio-sigma-five.git
-
-# Change into project directory
-cd portfolio-sigma-five
-
-# Install dependencies
-npm install
-
-# Run development server
 npm run dev
