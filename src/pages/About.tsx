@@ -1,28 +1,76 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Database, BarChart, Coffee } from "lucide-react";
+import { Code, Database, BarChart, Coffee, MousePointer, Zap } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const About = () => {
+  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setVisibleCards(prev => {
+        if (prev.length < skillCategories.length) {
+          return [...prev, prev.length];
+        }
+        return prev;
+      });
+    }, 200);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const skillCategories = [
     {
       title: "Web Development",
       icon: <Code className="h-6 w-6" />,
-      skills: ["React", "TypeScript", "Node.js", "Express", "Next.js", "Tailwind CSS"]
+      color: "from-blue-500 to-cyan-500",
+      skills: [
+        { name: "React", icon: "⚛️" },
+        { name: "TypeScript", icon: "📘" },
+        { name: "Node.js", icon: "🟢" },
+        { name: "Express", icon: "🚀" },
+        { name: "Next.js", icon: "▲" },
+        { name: "Tailwind CSS", icon: "🎨" }
+      ]
     },
     {
       title: "Java Full Stack",
       icon: <Coffee className="h-6 w-6" />,
-      skills: ["Java", "Spring Boot", "PostgreSQL", "REST APIs", "Maven", "JUnit"]
+      color: "from-orange-500 to-red-500",
+      skills: [
+        { name: "Java", icon: "☕" },
+        { name: "Spring Boot", icon: "🍃" },
+        { name: "PostgreSQL", icon: "🐘" },
+        { name: "REST APIs", icon: "🔗" },
+        { name: "Maven", icon: "📦" },
+        { name: "JUnit", icon: "🧪" }
+      ]
     },
     {
       title: "Data Science",
       icon: <Database className="h-6 w-6" />,
-      skills: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Jupyter"]
+      color: "from-green-500 to-emerald-500",
+      skills: [
+        { name: "Python", icon: "🐍" },
+        { name: "Pandas", icon: "🐼" },
+        { name: "NumPy", icon: "🔢" },
+        { name: "Scikit-learn", icon: "🤖" },
+        { name: "Matplotlib", icon: "📊" },
+        { name: "Jupyter", icon: "📓" }
+      ]
     },
     {
       title: "Data Analytics",
       icon: <BarChart className="h-6 w-6" />,
-      skills: ["SQL", "Tableau", "Power BI", "Excel", "R", "Statistical Analysis"]
+      color: "from-purple-500 to-pink-500",
+      skills: [
+        { name: "SQL", icon: "💾" },
+        { name: "Tableau", icon: "📈" },
+        { name: "Power BI", icon: "⚡" },
+        { name: "Excel", icon: "📋" },
+        { name: "R", icon: "📊" },
+        { name: "Statistical Analysis", icon: "📉" }
+      ]
     }
   ];
 
@@ -30,7 +78,7 @@ const About = () => {
     <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl font-bold tracking-tight mb-6">About Me</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             I'm a passionate software engineer with a diverse technical background spanning multiple 
@@ -41,7 +89,7 @@ const About = () => {
         </div>
 
         {/* My Journey Section */}
-        <Card className="p-8 mb-12 shadow-card">
+        <Card className="p-8 mb-12 shadow-card animate-slide-in-left">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-6">My Journey</h2>
@@ -56,14 +104,14 @@ const About = () => {
               </p>
             </div>
             <div className="flex justify-center">
-              <div className="relative">
-                <div className="w-48 h-48 bg-hero-gradient rounded-full flex items-center justify-center">
+              <div className="relative animate-bounce-in">
+                <div className="w-48 h-48 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center animate-pulse-slow">
                   <Code className="h-24 w-24 text-white" />
                 </div>
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-card rounded-full shadow-lg flex items-center justify-center">
+                <div className="absolute -top-4 -right-4 w-16 h-16 bg-card rounded-full shadow-lg flex items-center justify-center animate-bounce">
                   <Database className="h-8 w-8 text-primary" />
                 </div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-card rounded-full shadow-lg flex items-center justify-center">
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-card rounded-full shadow-lg flex items-center justify-center animate-bounce delay-100">
                   <BarChart className="h-8 w-8 text-primary" />
                 </div>
               </div>
@@ -72,22 +120,33 @@ const About = () => {
         </Card>
 
         {/* Skills Section */}
-        <div className="mb-12">
+        <div className="mb-12 animate-slide-in-right">
           <h2 className="text-3xl font-bold text-center mb-12">Skills & Technologies</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skillCategories.map((category) => (
-              <Card key={category.title} className="p-6 shadow-card hover:shadow-card-hover transition-all">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
+            {skillCategories.map((category, index) => (
+              <Card 
+                key={category.title} 
+                className={`p-6 shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:scale-105 cursor-pointer group ${
+                  visibleCards.includes(index) ? 'animate-bounce-in' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className={`p-3 bg-gradient-to-br ${category.color} rounded-lg text-white shadow-lg group-hover:scale-110 transition-transform`}>
                     {category.icon}
                   </div>
-                  <h3 className="font-semibold">{category.title}</h3>
+                  <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">{category.title}</h3>
                 </div>
-                <div className="space-y-2">
-                  {category.skills.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="mr-2 mb-2">
-                      {skill}
-                    </Badge>
+                <div className="space-y-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div 
+                      key={skill.name}
+                      className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-all duration-300 transform hover:translate-x-2"
+                      style={{ animationDelay: `${(index * 0.2) + (skillIndex * 0.1)}s` }}
+                    >
+                      <span className="text-2xl animate-pulse">{skill.icon}</span>
+                      <span className="text-sm font-medium">{skill.name}</span>
+                    </div>
                   ))}
                 </div>
               </Card>
@@ -95,23 +154,45 @@ const About = () => {
           </div>
         </div>
 
+        {/* Interactive Features */}
+        <Card className="p-8 shadow-card mb-8 animate-fade-in hover:shadow-card-hover transition-all">
+          <h2 className="text-3xl font-bold text-center mb-8">Interactive Features</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="text-center p-4 rounded-lg border-2 border-dashed border-primary/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer group">
+              <MousePointer className="h-12 w-12 mx-auto mb-4 text-primary group-hover:animate-bounce" />
+              <h4 className="font-semibold mb-2">Hover Effects</h4>
+              <p className="text-sm text-muted-foreground">Interactive hover animations throughout</p>
+            </div>
+            <div className="text-center p-4 rounded-lg border-2 border-dashed border-primary/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer group">
+              <Zap className="h-12 w-12 mx-auto mb-4 text-primary group-hover:animate-pulse" />
+              <h4 className="font-semibold mb-2">Smooth Animations</h4>
+              <p className="text-sm text-muted-foreground">CSS animations and transitions</p>
+            </div>
+            <div className="text-center p-4 rounded-lg border-2 border-dashed border-primary/30 hover:border-primary hover:bg-primary/5 transition-all cursor-pointer group">
+              <Code className="h-12 w-12 mx-auto mb-4 text-primary group-hover:animate-spin" />
+              <h4 className="font-semibold mb-2">React Features</h4>
+              <p className="text-sm text-muted-foreground">State management and effects</p>
+            </div>
+          </div>
+        </Card>
+
         {/* Personal Info */}
-        <Card className="p-8 shadow-card">
+        <Card className="p-8 shadow-card animate-fade-in">
           <h2 className="text-3xl font-bold text-center mb-8">Get to Know Me</h2>
           <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
+            <div className="hover:transform hover:scale-105 transition-transform p-4 rounded-lg hover:bg-muted/30">
               <h3 className="font-semibold text-lg mb-2">Education Focus</h3>
               <p className="text-muted-foreground">
                 Currently pursuing B.E. in Information Technology with a strong academic record (CGPA: 8.34)
               </p>
             </div>
-            <div>
+            <div className="hover:transform hover:scale-105 transition-transform p-4 rounded-lg hover:bg-muted/30">
               <h3 className="font-semibold text-lg mb-2">Interests</h3>
               <p className="text-muted-foreground">
                 AI/ML applications, Full-stack development, Data visualization, and solving real-world problems
               </p>
             </div>
-            <div>
+            <div className="hover:transform hover:scale-105 transition-transform p-4 rounded-lg hover:bg-muted/30">
               <h3 className="font-semibold text-lg mb-2">Goals</h3>
               <p className="text-muted-foreground">
                 Building innovative solutions, contributing to open source, and continuous learning in emerging technologies
