@@ -3,7 +3,6 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
 
 const Home = () => {
   const skills = [
@@ -16,14 +15,6 @@ const Home = () => {
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-8">
-            <img
-              src={profilePhoto}
-              alt="Gautam Vinayak Bhagwat"
-              className="mx-auto h-48 w-48 rounded-full object-cover shadow-lg ring-4 ring-primary/10"
-            />
-          </div>
-          
           <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
             Hi, I'm <span className="bg-hero-gradient bg-clip-text text-transparent">Gautam Bhagwat</span>
           </h1>
