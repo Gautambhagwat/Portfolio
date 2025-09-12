@@ -82,7 +82,7 @@ const About = () => {
           <h1 className="text-4xl font-bold tracking-tight mb-6">About Me</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             I'm a passionate software engineer with a diverse technical background spanning multiple 
-            IT domains. Currently building my expertise across web development, data science, and 
+            IT domains. Currently building my expertise across web development, data science and analytics, and 
             enterprise Java applications. I believe in continuous learning and creating solutions that 
             make a real impact.
           </p>

@@ -27,7 +27,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   const handleResumeDownload = async () => {
     try {
-      const resumePath = "/resume.pdf"; // place resume.pdf in public/
+      const resumePath = "https://drive.google.com/file/d/1qR_QdHufeZ4DhRXtTFxqKwVhfCIOjPbC/view?usp=drive_link"; // place resume.pdf in public/
       const response = await fetch(resumePath, { method: "HEAD" });
       if (response.ok) {
         const link = document.createElement("a");
@@ -131,7 +131,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className="container flex flex-col items-center justify-between gap-4 md:h-16 md:flex-row">
           <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
             <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-              © 2024 Gautam Vinayak Bhagwat. All rights reserved.
+              © 2025 Gautam Vinayak Bhagwat. All rights reserved.
             </p>
           </div>
           <div className="flex items-center space-x-4">
