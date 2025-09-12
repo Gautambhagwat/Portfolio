@@ -112,7 +112,9 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {filteredProjects.map((project, index) => (
-            <Card key={index} className="p-6 shadow-card hover:shadow-card-hover transition-all group animate-enter">
+
+
+<Card key={index} className="p-6 shadow-card hover:shadow-card-hover transition-all group animate-enter">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
