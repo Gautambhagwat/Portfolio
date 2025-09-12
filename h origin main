@@ -1,0 +1,47 @@
+[33mcommit 18d0b2c674d949600ec4af9b6ecdebf7166e3c21[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Gautambhagwat <112725977+Gautambhagwat@users.noreply.github.com>
+Date:   Fri Sep 12 20:03:28 2025 +0530
+
+    updated about and added resume
+
+[33mcommit 6ddcc9a6b57fd2b1ef45526b2814ba4c81de2ab4[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Gautambhagwat <112725977+Gautambhagwat@users.noreply.github.com>
+Date:   Fri Sep 12 17:27:32 2025 +0530
+
+    Refactor: Update portfolio content and remove unused dependencies
+
+[33mcommit 4bb8d78331a47e3466d6341f0b469fa48d9e6fb7[m
+Author: Gautambhagwat <112725977+Gautambhagwat@users.noreply.github.com>
+Date:   Fri Sep 12 17:25:48 2025 +0530
+
+    feat: unify animated heroes and entrance animations; add smooth global enter; fix E2E consistency on Projects/Contact; remove Lovable deps/branding; improve resume download; add right-arrow CTA; add AI skill; fix lint issues; ESM tailwind plugin; build verified
+
+[33mcommit 46c605b09631d2747accf9c99ff9537ecbefd77d[m
+Author: gpt-engineer-app[bot] <159125892+gpt-engineer-app[bot]@users.noreply.github.com>
+Date:   Fri Sep 12 06:25:19 2025 +0000
+
+    Organize skills and add animations
+
+[33mcommit f2cee315f4bf889bdca710e3265e9d4b8dc48980[m
+Author: gpt-engineer-app[bot] <159125892+gpt-engineer-app[bot]@users.noreply.github.com>
+Date:   Fri Sep 12 06:20:12 2025 +0000
+
+    Refactor: Update background color
+
+[33mcommit dfa09332ede05becca1c37211f37a45f6c838e65[m
+Author: gpt-engineer-app[bot] <159125892+gpt-engineer-app[bot]@users.noreply.github.com>
+Date:   Fri Sep 12 06:17:46 2025 +0000
+
+    Refactor: Update background color
+
+[33mcommit f5564503e45dd082edf63239065f9e4927898c15[m
+Author: gpt-engineer-app[bot] <159125892+gpt-engineer-app[bot]@users.noreply.github.com>
+Date:   Fri Sep 12 06:13:50 2025 +0000
+
+    Refactor: Implement portfolio website design
+
+[33mcommit 372bdd078d2791974a9159a0a73a0b8b99f724e5[m
+Author: gpt-engineer-app[bot] <159125892+gpt-engineer-app[bot]@users.noreply.github.com>
+Date:   Fri Sep 12 06:10:11 2025 +0000
+
+    [skip lovable] Use tech stack vite_react_shadcn_ts_20250728_minor
