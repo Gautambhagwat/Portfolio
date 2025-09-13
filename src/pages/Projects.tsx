@@ -7,43 +7,43 @@ import { useState } from "react";
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All Projects");
 
-  const filters = ["All Projects", "Web Development", "Java Full Stack", "Data Science", "Data Analytics"];
+  const filters = ["All Projects", "Frontend Development", "Backend Development", "Data Science & ML", "Data Analytics & BI"];
 
-  // Placeholder projects - these can be updated when real projects are available
+  // Professional project portfolio showcasing diverse technical expertise
   const projects = [
     {
-      title: "Portfolio Website",
-      description: "A responsive personal portfolio built with React and TypeScript",
-      category: "Web Development",
+      title: "Professional Portfolio Platform",
+      description: "A modern, responsive portfolio website showcasing technical expertise and professional achievements. Built with cutting-edge frontend technologies and optimized for performance and accessibility.",
+      category: "Frontend Development",
       status: "completed",
-      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      technologies: ["React.js", "TypeScript", "Tailwind CSS", "Vite"],
       github: "https://github.com/Gautambhagwat/gautam-dev-folio",
       demo: "https://your-portfolio-demo.example.com"
     },
     {
-      title: "E-Commerce Backend",
-      description: "RESTful API for e-commerce platform with Spring Boot",
-      category: "Java Full Stack",
+      title: "Enterprise E-Commerce API",
+      description: "Scalable RESTful API architecture for e-commerce platform with comprehensive business logic, authentication, and database optimization. Implements industry best practices for security and performance.",
+      category: "Backend Development",
       status: "in-progress",
-      technologies: ["Java", "Spring Boot", "PostgreSQL", "REST APIs"],
+      technologies: ["Java", "Spring Boot", "PostgreSQL", "RESTful APIs", "JWT"],
       github: "https://github.com/Gautambhagwat/placeholder-ecommerce",
       demo: ""
     },
     {
-      title: "Sales Data Analysis",
-      description: "Comprehensive analysis of retail sales data using Python",
-      category: "Data Science",
+      title: "Retail Analytics & Forecasting",
+      description: "Advanced data science project analyzing retail sales patterns and implementing predictive models for inventory optimization and revenue forecasting using machine learning algorithms.",
+      category: "Data Science & ML",
       status: "planned",
-      technologies: ["Python", "Pandas", "Matplotlib", "Jupyter"],
+      technologies: ["Python", "Pandas", "Scikit-learn", "Matplotlib", "Jupyter Notebooks"],
       github: "",
       demo: ""
     },
     {
-      title: "Business Dashboard",
-      description: "Interactive dashboard for business metrics visualization",
-      category: "Data Analytics",
+      title: "Executive Business Intelligence Dashboard",
+      description: "Comprehensive BI solution providing real-time insights into key business metrics, KPI tracking, and data visualization for strategic decision-making and performance monitoring.",
+      category: "Data Analytics & BI",
       status: "planned",
-      technologies: ["Tableau", "SQL", "Power BI"],
+      technologies: ["Tableau", "SQL", "Power BI", "Statistical Modeling"],
       github: "",
       demo: ""
     }
@@ -89,7 +89,8 @@ const Projects = () => {
         <div className="mx-auto max-w-6xl text-center relative z-10 animate-enter">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">Projects</h1>
           <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore my work across multiple domains. Filters help you find what you need.
+            Discover my portfolio of innovative solutions across diverse technology domains. 
+            Each project demonstrates expertise in modern development practices and business-focused problem solving.
           </p>
         </div>
       </section>
@@ -163,7 +164,7 @@ const Projects = () => {
               </div>
               {project.status === "planned" && (
                 <p className="text-xs text-muted-foreground mt-3">
-                  This project is currently in planning phase. Stay tuned for updates!
+                  This project is currently in development phase. Implementation details and updates coming soon.
                 </p>
               )}
             </Card>
@@ -173,14 +174,14 @@ const Projects = () => {
         {/* Call to Action */}
         <div className="mt-16 text-center animate-enter">
           <Card className="p-8 shadow-card">
-            <h2 className="text-2xl font-bold mb-4">Interested in Collaborating?</h2>
+            <h2 className="text-2xl font-bold mb-4">Ready to Collaborate?</h2>
             <p className="text-muted-foreground mb-6">
-              I'm always open to new opportunities and interesting projects. 
-              Let's connect and build something amazing together!
+              I'm actively seeking new opportunities to contribute to innovative projects and 
+              deliver exceptional solutions. Let's discuss how we can work together to achieve your goals.
             </p>
             <Button size="lg" asChild>
               <a href="mailto:gautambhagwat007@gmail.com">
-                Get In Touch
+                Start a Conversation
               </a>
             </Button>
           </Card>

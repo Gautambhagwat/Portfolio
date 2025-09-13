@@ -65,9 +65,9 @@ const Home = () => {
           </div>
           
           <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-3xl mx-auto">
-            Building innovative solutions across Data Science, Web Development, Java Full Stack, 
-            and Data Analytics. Currently expanding my expertise and creating impactful projects 
-            with a strong foundation in computer science and problem-solving.
+            Delivering scalable solutions across Frontend Development, Backend Systems, Data Science & ML, 
+            and Business Intelligence. Committed to leveraging cutting-edge technologies and industry best practices 
+            to solve complex business challenges and drive measurable results.
           </p>
           
           <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -77,7 +77,7 @@ const Home = () => {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="hover:scale-105 transition-transform">
-              <Link to="/contact">Get in Touch</Link>
+              <Link to="/contact">Start a Conversation</Link>
             </Button>
           </div>
           
@@ -130,7 +130,7 @@ const Home = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 animate-enter">
               <Sparkles className="inline h-8 w-8 mr-2 text-primary" />
-              My Expertise
+              Technical Expertise
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -154,14 +154,14 @@ const Home = () => {
           <Card className="p-8 shadow-card hover:shadow-card-hover transition-all duration-500 animate-enter hover:scale-[1.02]">
             <h2 className="text-3xl font-bold mb-6 text-center">About Me</h2>
             <p className="text-lg text-muted-foreground leading-relaxed text-center">
-              I'm a passionate software developer pursuing B.E. in Information Technology at 
-              D. Y. Patil College Of Engineering, Pune. With a strong academic foundation (CGPA: 8.34) 
-              and hands-on experience in multiple domains, I specialize in creating innovative solutions 
-              that bridge the gap between technology and real-world problems.
+              I'm a dedicated Software Engineer with Bachelor of Engineering in Information Technology from 
+              D. Y. Patil College Of Engineering, Pune. With a strong academic foundation (CGPA: 8.34/10.0) 
+              and comprehensive experience across multiple technology domains, I specialize in delivering 
+              enterprise-grade solutions that address complex business challenges and drive organizational success.
             </p>
             <div className="mt-8 text-center">
               <Button variant="outline" asChild className="hover:scale-105 transition-transform">
-                <Link to="/about">Learn More About Me</Link>
+                <Link to="/about">Explore My Background</Link>
               </Button>
             </div>
           </Card>

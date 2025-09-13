@@ -21,33 +21,33 @@ const About = () => {
 
   const skillCategories = [
     {
-      title: "Web Development",
+      title: "Frontend Development",
       icon: <Code className="h-6 w-6" />,
       color: "from-blue-500 to-cyan-500",
       skills: [
-        { name: "React", icon: "⚛️" },
-        { name: "TypeScript", icon: "📘" },
-        { name: "Node.js", icon: "🟢" },
-        { name: "Express", icon: "🚀" },
-        { name: "Next.js", icon: "▲" },
+        { name: "HTML5", icon: "🌐" },
+        { name: "CSS3", icon: "🎨" },
+        { name: "JavaScript (ES6+)", icon: "📜" },
+        { name: "React.js", icon: "⚛️" },
+        { name: "Responsive Design", icon: "📱" },
         { name: "Tailwind CSS", icon: "🎨" }
       ]
     },
     {
-      title: "Java Full Stack",
+      title: "Backend Development",
       icon: <Coffee className="h-6 w-6" />,
       color: "from-orange-500 to-red-500",
       skills: [
         { name: "Java", icon: "☕" },
         { name: "Spring Boot", icon: "🍃" },
+        { name: "Node.js", icon: "🟢" },
+        { name: "RESTful APIs", icon: "🔗" },
         { name: "PostgreSQL", icon: "🐘" },
-        { name: "REST APIs", icon: "🔗" },
-        { name: "Maven", icon: "📦" },
-        { name: "JUnit", icon: "🧪" }
+        { name: "Maven/Gradle", icon: "📦" }
       ]
     },
     {
-      title: "Data Science",
+      title: "Data Science & ML",
       icon: <Database className="h-6 w-6" />,
       color: "from-green-500 to-emerald-500",
       skills: [
@@ -55,38 +55,46 @@ const About = () => {
         { name: "Pandas", icon: "🐼" },
         { name: "NumPy", icon: "🔢" },
         { name: "Scikit-learn", icon: "🤖" },
-        { name: "Matplotlib", icon: "📊" },
-        { name: "Jupyter", icon: "📓" }
+        { name: "Matplotlib/Seaborn", icon: "📊" },
+        { name: "Jupyter Notebooks", icon: "📓" }
       ]
     },
     {
-      title: "Data Analytics",
+      title: "Data Analytics & BI",
       icon: <BarChart className="h-6 w-6" />,
       color: "from-purple-500 to-pink-500",
       skills: [
         { name: "SQL", icon: "💾" },
         { name: "Tableau", icon: "📈" },
         { name: "Power BI", icon: "⚡" },
-        { name: "Excel", icon: "📋" },
+        { name: "Excel/Google Sheets", icon: "📋" },
         { name: "R", icon: "📊" },
-        { name: "Statistical Analysis", icon: "📉" }
+        { name: "Statistical Modeling", icon: "📉" }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-16 animate-enter">
-          <h1 className="text-4xl font-bold tracking-tight mb-6">About Me</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a passionate software engineer with a diverse technical background spanning multiple 
-            IT domains. Currently building my expertise across web development, data science and analytics, and 
-            enterprise Java applications. I believe in continuous learning and creating solutions that 
-            make a real impact.
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full animate-pulse-slow"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full animate-bounce-in"></div>
+        </div>
+        <div className="mx-auto max-w-6xl text-center relative z-10 animate-enter">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">About Me</h1>
+          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+            I'm a dedicated software engineer with a comprehensive technical foundation across multiple 
+            technology domains. I specialize in full-stack development, data science, and enterprise applications, 
+            with a strong focus on delivering scalable solutions and driving data-driven insights. 
+            Committed to continuous learning and leveraging cutting-edge technologies to solve complex business challenges.
           </p>
         </div>
+      </section>
+
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
 
         {/* My Journey Section */}
         <Card className="p-8 mb-12 shadow-card animate-enter">
@@ -94,13 +102,14 @@ const About = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6">My Journey</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                My passion for technology started early, and I've been dedicated to expanding my skills across 
-                different domains of IT. From building responsive web applications to analyzing complex datasets, 
-                I enjoy tackling diverse challenges and learning new technologies.
+                My journey in technology began with a deep curiosity for problem-solving and innovation. 
+                I've systematically developed expertise across multiple technology stacks, from creating 
+                scalable web applications to implementing machine learning models and building enterprise-grade solutions.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Currently, I'm focused on building a comprehensive portfolio of projects that demonstrate my 
-                capabilities across web development, data science, Java enterprise applications, and analytical solutions.
+                Currently, I'm focused on developing a robust portfolio that showcases my proficiency in 
+                full-stack development, data science methodologies, enterprise Java applications, and 
+                business intelligence solutions that drive measurable business value.
               </p>
             </div>
             <div className="flex justify-center">
@@ -162,23 +171,24 @@ const About = () => {
             <div className="hover:transform hover:scale-105 transition-transform p-4 rounded-lg hover:bg-muted/30">
               <h3 className="font-semibold text-lg mb-2">Education</h3>
               <p className="text-muted-foreground">
-                Completed my B.E. in Information Technology with a strong academic record (CGPA: 8.34) in 2025
+                Bachelor of Engineering in Information Technology (CGPA: 8.34/10.0) - Class of 2025
               </p>
             </div>
             <div className="hover:transform hover:scale-105 transition-transform p-4 rounded-lg hover:bg-muted/30">
-              <h3 className="font-semibold text-lg mb-2">Interests</h3>
+              <h3 className="font-semibold text-lg mb-2">Specializations</h3>
               <p className="text-muted-foreground">
-                AI/ML applications, Full-stack development, Data visualization, and solving real-world problems
+                Machine Learning, Full-Stack Development, Data Visualization, and Enterprise Software Solutions
               </p>
             </div>
             <div className="hover:transform hover:scale-105 transition-transform p-4 rounded-lg hover:bg-muted/30">
-              <h3 className="font-semibold text-lg mb-2">Goals</h3>
+              <h3 className="font-semibold text-lg mb-2">Professional Goals</h3>
               <p className="text-muted-foreground">
-                Building innovative solutions, contributing to open source, and continuous learning in emerging technologies
+                Delivering innovative solutions, contributing to open-source projects, and advancing expertise in emerging technologies
               </p>
             </div>
           </div>
         </Card>
+        </div>
       </div>
     </div>
   );
