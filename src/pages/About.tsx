@@ -105,7 +105,7 @@ const About = () => {
             </div>
             <div className="flex justify-center">
               <div className="relative">
-                <div className="w-48 h-48 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center animate-pulse-slow">
+                <div className="w-48 h-48 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center ">
                   <Code className="h-24 w-24 text-white" />
                 </div>
                 <div className="absolute -top-4 -right-4 w-16 h-16 bg-card rounded-full shadow-lg flex items-center justify-center animate-bounce">
