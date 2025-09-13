@@ -121,7 +121,7 @@ const About = () => {
 
         {/* Skills Section */}
         <div className="mb-12 animate-enter">
-          <h2 className="text-3xl font-bold text-center mb-12">Skills & Technologies</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Tech Stack</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skillCategories.map((category, index) => (
               <Card 

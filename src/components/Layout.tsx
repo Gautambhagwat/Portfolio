@@ -227,7 +227,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <span className="ml-2">Contact</span>
               </a>
             </Button>
-            <Button variant="ghost" size="sm" className="text-sm">
+            <Button variant="ghost" size="sm" className="text-sm" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
               Back to top ↑
             </Button>
           </div>
