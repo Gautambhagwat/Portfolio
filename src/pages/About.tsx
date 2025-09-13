@@ -27,7 +27,7 @@ const About = () => {
       skills: [
         { name: "HTML5", icon: "🌐" },
         { name: "CSS3", icon: "🎨" },
-        { name: "JavaScript (ES6+)", icon: "📜" },
+        { name: "JavaScript", icon: "📜" },
         { name: "React.js", icon: "⚛️" },
         { name: "Responsive Design", icon: "📱" },
         { name: "Tailwind CSS", icon: "🎨" }
