@@ -47,7 +47,7 @@ const Home = () => {
         
         <div className={`mx-auto max-w-4xl text-center relative z-10 transition-all duration-1000 ${isVisible ? 'animate-enter' : 'opacity-0'}`}>
           <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
-            Hi, I'm <span className="bg-hero-gradient bg-clip-text text-transparent animate-pulse">Gautam Bhagwat</span>
+            Hi, I'm <span className="animate-name-shimmer animate-name-float">Gautam Bhagwat</span>
           </h1>
           
           <p className="mt-6 text-xl leading-8 text-muted-foreground">
